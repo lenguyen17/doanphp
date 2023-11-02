@@ -50,7 +50,7 @@
             $result = $db->getInstance($query);
             return $result;
             }
-        }
+        }       
         function getLaptopById($id, $id_ct) {
             if($id){
                 $subquery = '';
@@ -137,5 +137,23 @@
             $rs = $db->getList($query);
             return $rs;
         }
+
+        public function getCTLaptopList(){
+            $db = new connect();
+                        $query = "SELECT a.id_laptop, a.ten_laptop, a.mieu_ta, a.so_luot_xem,b.id_ctlaptop, b.don_gia, b.giam_gia, b.cpu, b.man_hinh, 
+                                b.so_luong, d.id_dungluong, d.dung_luong, c.ten_loai, e.id_mau, e.ten_mau, f.url
+                                    FROM laptop a
+                                    INNER JOIN ct_laptop b ON a.id_laptop = b.id_laptop
+                                    INNER JOIN loai c ON a.id_loai = c.id_loai
+                                    INNER JOIN dungluong d ON b.id_dungluong = d.id_dungluong
+                                    INNER JOIN mau e ON b.id_mau = e.id_mau
+                                    INNER JOIN hinhanh f ON b.id_laptop = f.id_laptop
+                                    WHERE f.id_mau = b.id_mau 
+                                    ORDER BY b.id_ctlaptop ASC;
+                                ";
+            $result = $db->getList($query);
+            return $result;
+        }
+
     }
 ?>

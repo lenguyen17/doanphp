@@ -29,22 +29,22 @@
                     $_SESSION['so_dien_thoai'] = $dn['so_dien_thoai'];
                     if($_SESSION['ten_quyen'] === "Admin"){
                         include('./View/pages/home.php');
-                        echo '<meta http-equiv="refresh"  content="0; url=../doancuoiky/index.php?action=home"/>';
+                        echo '<meta http-equiv="refresh"  content="0; url=../doanphp/index.php?action=home"/>';
                     }else {
                         include('./View/pages/home.php');
-                        echo '<meta http-equiv="refresh"  content="0; url=../doancuoiky/index.php?action=home"/>';
+                        echo '<meta http-equiv="refresh"  content="0; url=../doanphp/index.php?action=home"/>';
                     }  
                 } else {
                     echo '<script>alert("Đăng nhập thất bại")</script>';
-                    include('./View/pages/login.php');
+                    include('./View/pages/dangnhap.php');
                 }
 
             }
             break;
         case 'dangxuat_action':
                 session_unset();
-                include('./View/home.php');
-                echo '<meta http-equiv="refresh"  content="0; url=../doancuoiky/index.php?action=home"/>';
+                include('./View/pages/home.php');
+                echo '<meta http-equiv="refresh"  content="0; url=../doanphp/index.php?action=home"/>';
 
             break;
         default:

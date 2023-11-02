@@ -616,4 +616,7 @@ img.footer__ship_logo{
     width: 25% !important;
 }
 
-/* CART */
+/* ADMIN */
+.table-product-img {
+    width: 80px;    
+}
