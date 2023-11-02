@@ -15,6 +15,7 @@
                 <th>Đơn giá</td>
                 <th>Khuyến mãi</td>
                 <th>Số lượng</td>
+                <th>Tùy chọn</td>
             </tr>
         </thead>
         <tbody>
@@ -58,6 +59,16 @@
                     <td><?php echo number_format($item['don_gia'], 0, ',', '.'); ?> đ</td>
                     <td><?php echo $item['giam_gia']; ?> %</td>
                     <td><?php echo $item['so_luong']; ?></td>
+                    <td class="text-center">
+                        <div class="d-flex justify-content-center">
+                            <a href="index.php?action=quanly&act=chinhsua&id_ctlaptop=<?php echo  $item['id_ctlaptop'];?>"class="me-2">
+                                <button class="bg-transparent border-0"><i class="fa-regular fa-pen-to-square text-primary"></i></button>
+                            </a>
+                            <form action="" method="post" class="me-2">
+                                <button class="bg-transparent border-0"><i class="fa fa-trash text-danger" onclick="confirmSubmit(event)"></i></button>
+                            </form>
+                        </div>
+                    </td>
                 </tr>
 
         </tbody>
@@ -66,3 +77,12 @@
             }; ?>
     </table>
 </div>
+
+<script>
+    // Confirm before submit
+    function confirmSubmit(event) {
+        if (!confirm("Bạn có chắc chắn muốn xóa?")) {
+            event.preventDefault();
+        }
+    }
+</script>

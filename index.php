@@ -66,9 +66,16 @@
     <!-- IMPORT FOOTER -->
     <?php include('View/layout/footer.php') ?>
 <?php }else {?>
-    
     <?php include('View/admin/adminheader.php') ?>
-    <?php include('View/admin/home.php') ?>
+    <div class="">
+        <?php
+          $ctr = 'quanly';
+          if (isset($_GET['action'])) {
+            $ctr = $_GET['action'];
+          }
+          include('./Controller/' . $ctr . '.php');
+        ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>

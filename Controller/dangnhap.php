@@ -29,7 +29,7 @@
                     $_SESSION['so_dien_thoai'] = $dn['so_dien_thoai'];
                     if($_SESSION['ten_quyen'] === "Admin"){
                         include('./View/pages/home.php');
-                        echo '<meta http-equiv="refresh"  content="0; url=../doanphp/index.php?action=home"/>';
+                        echo '<meta http-equiv="refresh"  content="0; url=../doanphp/index.php?action=quanly"/>';
                     }else {
                         include('./View/pages/home.php');
                         echo '<meta http-equiv="refresh"  content="0; url=../doanphp/index.php?action=home"/>';
