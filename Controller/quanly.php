@@ -11,9 +11,9 @@
             include './View/admin/suasanpham.php';
             break;
         case "delete": 
-            $idlaptop = isset($_GET['idlaptop']) ? $_GET['idlaptop'] : '';
+            $id_laptop = isset($_POST['id_ctlaptop']) ? $_POST['id_ctlaptop'] : '';
             $laptop = new laptop();
-            $result = $laptop->deleteCTLaptop($idlaptop);
+            $result = $laptop->deleteCTLaptop($id_laptop);
             if($result){
                 echo "<script>alert('Xóa thành công');window.location.href='index.php?action=quanly&act=quanly'</script>";
             }else{

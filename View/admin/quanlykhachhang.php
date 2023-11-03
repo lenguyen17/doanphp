@@ -30,10 +30,11 @@
                     <td><?php echo $item['dia_chi']; ?></td>
                     <td class="text-center">
                         <div class="d-flex justify-content-center">
-                            <a href="index.php?action=quanly&act=chinhsua&id_ctlaptop="class="me-2">
+                            <a href="index.php?action=quanly&act=chinhsuauser&id_ctlaptop=<?php echo $item['id_ctlaptop'];?>"class="me-2">
                                 <button class="bg-transparent border-0"><i class="fa-regular fa-pen-to-square text-primary"></i></button>
                             </a>
-                            <form action="index.php?action=quanly&act=delete_action&id_ctlaptop=" method="get" class="me-2">
+                            <form action="index.php?action=quanly&act=deleteuser" class="me-2">
+                                <input type="text" class="" name="id_ctlaptop" value="<?php echo $item['id_ctlaptop'];?>">
                                 <button class="bg-transparent border-0"><i class="fa fa-trash text-danger" onclick="confirmSubmit(event)"></i></button>
                             </form>
                         </div>
