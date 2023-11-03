@@ -89,12 +89,29 @@
             $result = $db->getList($query);
             return $result;
         }
+
+        public function getAllMau() {
+            $db = new connect();
+            $query = "SELECT * from mau;
+                    ";
+            $result = $db->getList($query);
+            return $result;
+        }
+
         public function getMauByIdLaptop($id){
             $db = new connect();
             $query = "		SELECT DISTINCT b.id_mau, b.ten_mau
                             FROM ct_laptop a,  mau b
                             WHERE a.id_mau = b.id_mau
                             AND a.id_laptop = $id
+                    ";
+            $result = $db->getList($query);
+            return $result;
+        }
+
+        public function getAllLoai() {
+            $db = new connect();
+            $query = "SELECT * from loai;
                     ";
             $result = $db->getList($query);
             return $result;
@@ -121,6 +138,13 @@
                                     ORDER BY b.id_ctlaptop ASC;
                                 ";
             $result = $db->getList($query);
+            return $result;
+        }
+
+        function deleteCTLaptop($id_ctlaptop){
+            $db = new connect();
+            $query = "DELETE FROM ct_laptop WHERE id_ctlaptop = $id_ctlaptop";
+            $result = $db->exec($query);
             return $result;
         }
 

@@ -64,7 +64,7 @@
                             <a href="index.php?action=quanly&act=chinhsua&id_ctlaptop=<?php echo  $item['id_ctlaptop'];?>"class="me-2">
                                 <button class="bg-transparent border-0"><i class="fa-regular fa-pen-to-square text-primary"></i></button>
                             </a>
-                            <form action="" method="post" class="me-2">
+                            <form action="index.php?action=quanly&act=delete_action&id_ctlaptop=<?php echo $item['id_ctlaptop'];?>" method="get" class="me-2">
                                 <button class="bg-transparent border-0"><i class="fa fa-trash text-danger" onclick="confirmSubmit(event)"></i></button>
                             </form>
                         </div>
