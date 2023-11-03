@@ -36,6 +36,15 @@
             $result = $db->exec($query);
             return $result;
         }
+
+        function getAllUser(){
+            $db = new connect();
+            $query = "select a.id_user, a.email, a.id_quyen, a.password, a.so_dien_thoai, a.ten_kh, a.dia_chi, b.ten_quyen from khachhang a, phanquyen b 
+                        where a.id_quyen = b.id_quyen;
+            ";
+            $result = $db->getList($query);
+            return $result;
+        }
     }
 
 ?>

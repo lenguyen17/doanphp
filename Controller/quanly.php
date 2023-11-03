@@ -20,5 +20,8 @@
                 echo "<script>alert('Xóa thất bại');window.location.href='index.php?action=quanly&act=quanly'</script>";
             }
             break;
+        case "khachhang":
+            include './View/admin/quanlykhachhang.php';
+            break;
      }
 ?>

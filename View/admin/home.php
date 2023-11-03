@@ -1,5 +1,5 @@
 <div class="container-fluid w-75">
-    <h4 class="text-center fw-bold my-3">DANH MỤC SẢN PHẨM</h4>
+    <h4 class="text-center fw-bold my-3">DANH SÁCH SẢN PHẨM</h4>
     <table class="table table-bordered">
         <thead>
             <tr>
